@@ -20,3 +20,25 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@mixin stBtn {
+  padding: 9px 20px;
+  background-color: #1d8483;
+  border: 0px;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@mixin sdBtn {
+  padding: 7px 20px;
+  background-color: transparent;
+  border: 2px solid #1d8483;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
