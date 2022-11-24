@@ -1,0 +1,22 @@
+@mixin debug {
+  border: 1px solid black;
+}
+
+@mixin center {
+  width: 70%;
+  height: 100%;
+  margin: auto;
+}
+
+@mixin lowFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mediumFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
