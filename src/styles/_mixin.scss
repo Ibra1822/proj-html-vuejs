@@ -42,3 +42,12 @@
   text-transform: uppercase;
   cursor: pointer;
 }
+
+@mixin darkBtn {
+  padding: 10px 20px;
+  background-color: #121117;
+  border: 3px solid rgba(29, 132, 131, 0.7);
+  border-radius: 7px;
+  color: #fff;
+  cursor: pointer;
+}

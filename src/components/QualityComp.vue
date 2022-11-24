@@ -54,7 +54,6 @@ export default {
 .cont-qual {
   @include debug;
   width: 100%;
-  height: 400px;
   background-color: #e3e7df;
   .center {
     @include center;
@@ -63,13 +62,15 @@ export default {
   .card {
     height: 290px;
     width: calc(100% / 3);
-    padding: 25px;
+    padding: 15px;
+    margin: 40px 0px;
     .cont-inside {
       height: 100%;
       width: 100%;
       background-color: #ffffff;
       padding: 10px;
       border-radius: 15px;
+      overflow-y: scroll;
     }
     i {
       font-size: 1.2rem;

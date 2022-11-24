@@ -73,13 +73,14 @@ export default {
       width: 30%;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       .box-cont {
         display: flex;
         flex-wrap: wrap;
         .box {
-          height: 200px;
           width: calc(100% / 2);
           padding: 5px;
+          margin-bottom: 45px;
           .box-title {
             display: flex;
             padding: 10px;
@@ -94,7 +95,6 @@ export default {
     }
     .title {
       width: 100%;
-      height: 200px;
       padding: 20px 10px;
       color: #24333d;
       .about-text {
