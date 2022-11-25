@@ -1,6 +1,15 @@
 <script>
+import { store } from "../data/store";
 export default {
   name: "Networkcomp",
+  props: {
+    networkArray: Array,
+  },
+  data() {
+    return {
+      store,
+    };
+  },
 };
 </script>
 <template>
@@ -16,36 +25,12 @@ export default {
           </p>
         </div>
         <div class="box-cont">
-          <div class="box">
+          <div v-for="(item, index) in networkArray" :key="index" class="box">
             <div class="box-title">
-              <i class="fa-solid fa-medal"></i>
-              <h2>Transition</h2>
+              <i :class="item.icon"></i>
+              <h2>{{ item.title }}</h2>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <div class="box">
-            <div class="box-title">
-              <i class="fa-solid fa-lock"></i>
-              <h2>Security</h2>
-            </div>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-
-          <div class="box">
-            <div class="box-title">
-              <i class="fa-regular fa-pen-to-square"></i>
-              <h2>Certificate</h2>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-
-          <div class="box">
-            <div class="box-title">
-              <i class="fa-solid fa-graduation-cap"></i>
-              <h2>Expertise</h2>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>{{ item.desc }}</p>
           </div>
         </div>
       </div>
@@ -79,7 +64,7 @@ export default {
         flex-wrap: wrap;
         .box {
           width: calc(100% / 2);
-          padding: 5px;
+          padding: 10px;
           margin-bottom: 45px;
           .box-title {
             display: flex;

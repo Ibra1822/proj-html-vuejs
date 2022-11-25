@@ -29,8 +29,8 @@ export default {
         <h2>{{ item.title }}</h2>
         <ul>
           <li v-for="(li, index) in item.inside" :key="index">
-            <a href="">
-              <i class="fa-solid fa-chevron-right"></i>
+            <a href="#">
+              <i class="fa-solid fa-chevron-right no-hover"></i>
               <p>{{ li }}</p>
             </a>
           </li>
@@ -47,7 +47,7 @@ export default {
         <i class="fa-regular fa-copyright"></i>
         <p>2020 NEXTGEN is Proudly Powered by <span>Codings</span></p>
       </div>
-      <i class="fa-solid fa-arrow-up"></i>
+      <a href="#up"> <i class="fa-solid fa-arrow-up"></i></a>
     </div>
   </div>
 </template>
@@ -82,6 +82,9 @@ footer {
         margin-bottom: 20px;
         &:hover {
           text-decoration: underline;
+        }
+        &:hover .no-hover {
+          text-decoration: none;
         }
         i {
           margin-right: 15px;
@@ -151,6 +154,7 @@ footer {
       font-size: 1.4rem;
       margin: 0px 20px;
       cursor: pointer;
+      color: #fff;
     }
     .cont-year {
       display: flex;
@@ -165,6 +169,7 @@ footer {
         font-size: 0.8rem;
         margin: 3px 2px;
         cursor: default;
+        color: #fff;
       }
     }
   }

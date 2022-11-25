@@ -28,9 +28,9 @@ export default {
 };
 </script>
 <template>
-  <QualityComp />
-  <NetworkComp />
-  <BusinessComp />
+  <QualityComp :quality="store.QualityArray" />
+  <NetworkComp :networkArray="store.networkArray" />
+  <BusinessComp :businessArray="store.businessArray" />
   <PriceAreaComp />
   <NewsComp />
   <FollowComp />

@@ -106,6 +106,7 @@ export default {
     }
     .message {
       textarea {
+        resize: none;
         width: 98%;
         margin: 1%;
         background-color: lightgray;

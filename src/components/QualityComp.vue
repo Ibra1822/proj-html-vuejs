@@ -1,45 +1,31 @@
 <script>
+import { store } from "../data/store";
 export default {
   name: "QualityComp",
+  props: {
+    quality: Array,
+  },
+  data() {
+    return {
+      store,
+    };
+  },
 };
 </script>
 <template>
   <div class="cont-qual">
     <div class="center">
-      <div class="card">
+      <div v-for="(item, index) in quality" :key="index" class="card">
         <div class="cont-inside">
-          <div class="card-logo"><i class="fa-solid fa-user-group"></i></div>
-          <div class="card-title"><h2>Human Capital</h2></div>
-          <div class="card-text">
-            <p>
-              Humanizing business:Harness the power of technology to improve the
-              way people work
-            </p>
+          <div class="card-logo">
+            <i :class="item.logo"></i>
           </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="cont-inside">
-          <div class="card-logo"><i class="fa-solid fa-chart-pie"></i></div>
-          <div class="card-title"><h2>Core Business</h2></div>
-          <div class="card-text">
-            <p>
-              It takes innovative approaches to transform modernize and run
-              existing platforms
-            </p>
+          <div class="card-title">
+            <h2>{{ item.title }}</h2>
           </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="cont-inside">
-          <div class="card-logo"><i class="fa-solid fa-gauge-high"></i></div>
-          <div class="card-title"><h2>Performnace</h2></div>
           <div class="card-text">
             <p>
-              Achieving maximum impact and value from investments in finance and
-              supply chain
+              {{ item.desc }}
             </p>
           </div>
         </div>
@@ -52,7 +38,6 @@ export default {
 @use "../styles/mixin" as *;
 
 .cont-qual {
-  @include debug;
   width: 100%;
   background-color: #e3e7df;
   .center {

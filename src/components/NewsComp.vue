@@ -132,7 +132,7 @@ export default {
         width: calc(100% / 3 - 30px);
         position: relative;
         overflow: hidden;
-
+        cursor: pointer;
         &:hover .text p {
           display: block;
         }

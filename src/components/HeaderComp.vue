@@ -14,7 +14,7 @@ export default {
 };
 </script>
 <template>
-  <div class="cont-header">
+  <div id="up" class="cont-header">
     <div class="cont-all">
       <div class="head">
         <div class="info">

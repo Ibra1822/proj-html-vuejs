@@ -1,6 +1,15 @@
 <script>
+import { store } from "../data/store";
 export default {
   neme: "BusinessComp",
+  props: {
+    businessArray: Array,
+  },
+  data() {
+    return {
+      store,
+    };
+  },
 };
 </script>
 <template>
@@ -23,51 +32,11 @@ export default {
         </div>
       </div>
       <div class="box-cont">
-        <div class="box">
+        <div v-for="(item, index) in businessArray" :key="index" class="box">
           <div class="inbox">
-            <i class="fa-solid fa-network-wired"></i>
-            <h2>Audit & Assurance</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-            <button>Read more</button>
-          </div>
-        </div>
-        <div class="box">
-          <div class="inbox">
-            <i class="fa-solid fa-suitcase"></i>
-            <h2>Financial Advisory</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-            <button>Read more</button>
-          </div>
-        </div>
-        <div class="box">
-          <div class="inbox">
-            <i class="fa-solid fa-chart-simple"></i>
-            <h2>Analytics and M&A</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-            <button>Read more</button>
-          </div>
-        </div>
-        <div class="box">
-          <div class="inbox">
-            <i class="fa-solid fa-plane-up"></i>
-            <h2>Middle Marketing</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-            <button>Read more</button>
-          </div>
-        </div>
-        <div class="box">
-          <div class="inbox">
-            <i class="fa-solid fa-earth-europe"></i>
-            <h2>Legal Consulting</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-            <button>Read more</button>
-          </div>
-        </div>
-        <div class="box">
-          <div class="inbox">
-            <i class="fa-solid fa-inbox"></i>
-            <h2>Regulatory Risk</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            <i :class="item.icon"></i>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.desc }}</p>
             <button>Read more</button>
           </div>
         </div>
