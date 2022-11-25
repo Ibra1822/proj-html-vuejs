@@ -6,6 +6,9 @@ import PriceAreaComp from "./PriceAreaComp.vue";
 import NewsComp from "./NewsComp.vue";
 import FollowComp from "./FollowComp.vue";
 import MessageComp from "./MessageComp.vue";
+
+import { store } from "../data/store";
+
 export default {
   name: "MainComp",
   components: {
@@ -17,6 +20,11 @@ export default {
     FollowComp,
     MessageComp,
   },
+  data() {
+    return {
+      store,
+    };
+  },
 };
 </script>
 <template>
@@ -26,7 +34,7 @@ export default {
   <PriceAreaComp />
   <NewsComp />
   <FollowComp />
-  <MessageComp />
+  <MessageComp :info="store.aboutus" />
 </template>
 
 <style lang="scss" scoped></style>

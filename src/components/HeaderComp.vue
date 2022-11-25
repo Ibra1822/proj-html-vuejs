@@ -1,6 +1,16 @@
 <script>
+import { store } from "../data/store";
+
 export default {
   name: "HeaderComp",
+  data() {
+    return {
+      store,
+    };
+  },
+  props: {
+    nav: Array,
+  },
 };
 </script>
 <template>
@@ -31,11 +41,9 @@ export default {
             </div>
             <nav>
               <ul>
-                <li><a href=""> home</a></li>
-                <li><a href=""> about</a></li>
-                <li><a href=""> services</a></li>
-                <li><a href=""> pricing</a></li>
-                <li><a href=""> blog</a></li>
+                <li v-for="(item, index) in nav" :key="index">
+                  <a href="#">{{ item.title }}</a>
+                </li>
               </ul>
               <button>Get in touch</button>
             </nav>

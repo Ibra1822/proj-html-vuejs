@@ -168,6 +168,10 @@ export default {
           display: none;
           p {
             margin: 0px 15px;
+            font-size: 0.9rem;
+          }
+          i {
+            font-size: 0.9rem;
           }
         }
 

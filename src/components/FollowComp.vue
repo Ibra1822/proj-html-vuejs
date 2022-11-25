@@ -69,9 +69,15 @@ export default {
       flex-direction: column;
       justify-content: center;
       input {
-        padding: 10px 15px;
+        padding: 12px 15px;
         opacity: 0.5;
         margin-bottom: 20px;
+        border-radius: 5px;
+        border: 0px;
+        &:focus-visible {
+          outline: 2px solid #1d8483;
+          opacity: 0.7;
+        }
       }
       button {
         width: 130px;
