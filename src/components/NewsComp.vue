@@ -1,6 +1,23 @@
 <script>
+import { store } from "../data/store";
 export default {
   name: "NewsComp",
+  props: {
+    newsArray: Array,
+  },
+  data() {
+    return {
+      store,
+    };
+  },
+  methods: {
+    getImg(imgName) {
+      return new URL(
+        `../assets/lead-customer/images/${imgName}`,
+        import.meta.url
+      ).href;
+    },
+  },
 };
 </script>
 <template>
@@ -18,61 +35,19 @@ export default {
         </div>
       </div>
       <div class="cont-box">
-        <div class="box">
+        <div v-for="(item, index) in newsArray" :key="index" class="box">
           <div class="img-cont">
-            <img
-              class="eff"
-              src="../assets/lead-customer/images/news-1.jpg"
-              alt=""
-            />
+            <img class="eff" :src="getImg(item.image)" alt="" />
           </div>
           <div class="user">
             <i class="fa-solid fa-user"></i>
-            <p>Anderea Miller</p>
+            <p>{{ item.user }}</p>
             <i class="fa-regular fa-clock"></i>
-            <p>2 Days ago</p>
+            <p>{{ item.last }}</p>
           </div>
           <div class="text">
-            <h2>Increasing creativity is possible dor everyone</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-cont">
-            <img
-              class="eff"
-              src="../assets/lead-customer/images/news-2.jpg"
-              alt=""
-            />
-          </div>
-          <div class="user">
-            <i class="fa-solid fa-user"></i>
-            <p>Anderea Miller</p>
-            <i class="fa-regular fa-clock"></i>
-            <p>2 Days ago</p>
-          </div>
-          <div class="text">
-            <h2>Because market research is part of of the business plan</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-cont">
-            <img
-              class="eff"
-              src="../assets/lead-customer/images/news-3.jpg"
-              alt=""
-            />
-          </div>
-          <div class="user">
-            <i class="fa-solid fa-user"></i>
-            <p>Anderea Miller</p>
-            <i class="fa-regular fa-clock"></i>
-            <p>2 Days ago</p>
-          </div>
-          <div class="text">
-            <h2>Working from home is now a trend</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.desc }}</p>
           </div>
         </div>
       </div>

@@ -36,7 +36,7 @@ export const store = reactive({
       desc: "It takes innovative approaches to transform modernize and run existing platforms",
     },
     {
-      title: "Performnace",
+      title: "Performance",
       logo: "fa-solid fa-gauge-high",
       desc: "Achieving maximum impact and value from investments in finance and supply chain",
     },
@@ -68,33 +68,144 @@ export const store = reactive({
   businessArray: [
     {
       icon: "fa-solid fa-network-wired",
-      titile: "Audit & Assurance",
+      title: "Audit & Assurance",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
     },
     {
       icon: "fa-solid fa-suitcase",
-      titile: "Financial Advisory",
+      title: "Financial Advisory",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
     },
     {
       icon: "fa-solid fa-chart-simple",
-      titile: "Analytics and M&A",
+      title: "Analytics and M&A",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
     },
     {
       icon: "fa-solid fa-plane-up",
-      titile: "Middle Marketing",
+      title: "Middle Marketing",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
     },
     {
       icon: "fa-solid fa-earth-europe",
-      titile: "Legal Consulting",
+      title: "Legal Consulting",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
     },
     {
       icon: "fa-solid fa-inbox",
-      titile: "Regulatory Risk",
+      title: "Regulatory Risk",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    },
+  ],
+
+  priceArray: [
+    {
+      icon: "fa-solid fa-rocket",
+      title: "Standard",
+      price: "$ 490/mo",
+      popular: false,
+      offer: [
+        {
+          type: "Standard Accounting",
+          isTrue: true,
+        },
+        {
+          type: "Platfotm Access",
+          isTrue: true,
+        },
+        {
+          type: "Business Orientation",
+          isTrue: false,
+        },
+        {
+          type: "Dedicated Consultant",
+          isTrue: false,
+        },
+        {
+          type: "Personal Assistance",
+          isTrue: false,
+        },
+      ],
+    },
+    {
+      icon: "fa-solid fa-suitcase",
+      title: "Professional",
+      price: "$ 890/mo",
+      popular: true,
+      offer: [
+        {
+          type: "Standard Accounting",
+          isTrue: true,
+        },
+        {
+          type: "Platfotm Access",
+          isTrue: true,
+        },
+        {
+          type: "Business Orientation",
+          isTrue: true,
+        },
+        {
+          type: "Dedicated Consultant",
+          isTrue: false,
+        },
+        {
+          type: "Personal Assistance",
+          isTrue: false,
+        },
+      ],
+    },
+    {
+      icon: "fa-regular fa-gem",
+      title: "Ultimate",
+      price: "$ 1.390/mo",
+      popular: false,
+      offer: [
+        {
+          type: "Standard Accounting",
+          isTrue: true,
+        },
+        {
+          type: "Platfotm Access",
+          isTrue: true,
+        },
+        {
+          type: "Business Orientation",
+          isTrue: true,
+        },
+        {
+          type: "Dedicated Consultant",
+          isTrue: true,
+        },
+        {
+          type: "Personal Assistance",
+          isTrue: true,
+        },
+      ],
+    },
+  ],
+
+  newsArray: [
+    {
+      image: "news-1.jpg",
+      title: "Increasing creativity is possible dor everyone",
+      desc: "Lorem ipsum dolor sit amet.",
+      user: "Laura Johnson",
+      last: "2 Days ago",
+    },
+    {
+      image: "news-2.jpg",
+      title: "Because market research is part of of the business plan",
+      desc: "Lorem ipsum dolor sit amet.",
+      user: "Anderea Miller",
+      last: "1 Days ago",
+    },
+    {
+      image: "news-3.jpg",
+      title: "Working from home is now a trend",
+      desc: "Lorem ipsum dolor sit amet.",
+      user: "Elisa Simpson",
+      last: "4 Days ago",
     },
   ],
 

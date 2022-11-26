@@ -1,6 +1,15 @@
 <script>
+import { store } from "../data/store";
 export default {
   name: "PriceAreaComp",
+  props: {
+    priceArray: Array,
+  },
+  data() {
+    return {
+      store,
+    };
+  },
 };
 </script>
 <template>
@@ -16,88 +25,31 @@ export default {
         </p>
       </div>
       <div class="cont-card-price">
-        <div class="box">
+        <div
+          v-for="(item, index) in priceArray"
+          :key="index"
+          class="box"
+          :class="{ big: item.popular }"
+        >
+          <div v-if="item.popular" class="popular">
+            <h6>Most popular</h6>
+          </div>
           <div class="title-box">
-            <i class="fa-solid fa-rocket"></i>
-            <h3>Standard</h3>
-            <h2>$ 490/mo</h2>
+            <i :class="item.icon"></i>
+            <h3>{{ item.title }}</h3>
+            <h2>{{ item.price }}</h2>
             <ul>
-              <li>
-                <p>Standard Accounting</p>
-                <i class="fa-solid fa-check"></i>
-              </li>
-              <li>
-                <p>Platform Access</p>
-                <i class="fa-solid fa-check"></i>
-              </li>
-              <li>
-                <p>Business Orientation</p>
-                <i class="fa-solid fa-xmark"></i>
-              </li>
-              <li>
-                <p>Dedicated Consultant</p>
-                <i class="fa-solid fa-xmark"></i>
-              </li>
-              <li>
-                <p>Personal assistence</p>
-                <i class="fa-solid fa-xmark"></i>
+              <li v-for="(ogt, index) in item.offer" :key="index">
+                <p>{{ ogt.type }}</p>
+                <i
+                  :class="{
+                    'fa-solid fa-check': ogt.isTrue,
+                    'fa-solid fa-x': ogt.isTrue === false,
+                  }"
+                ></i>
               </li>
             </ul>
           </div>
-        </div>
-        <div class="box center">
-          <i class="fa-solid fa-briefcase"></i>
-          <h3>Professional</h3>
-          <h2>$ 890/mo</h2>
-          <ul>
-            <li>
-              <p>Standard Accounting</p>
-              <i class="fa-solid fa-check"></i>
-            </li>
-            <li>
-              <p>Platform Access</p>
-              <i class="fa-solid fa-check"></i>
-            </li>
-            <li>
-              <p>Business Orientation</p>
-              <i class="fa-solid fa-check"></i>
-            </li>
-            <li>
-              <p>Dedicated Consultant</p>
-              <i class="fa-solid fa-xmark"></i>
-            </li>
-            <li>
-              <p>Personal assistence</p>
-              <i class="fa-solid fa-xmark"></i>
-            </li>
-          </ul>
-        </div>
-        <div class="box">
-          <i class="fa-regular fa-gem"></i>
-          <h3>Professional</h3>
-          <h2>$ 890/mo</h2>
-          <ul>
-            <li>
-              <p>Standard Accounting</p>
-              <i class="fa-solid fa-check"></i>
-            </li>
-            <li>
-              <p>Platform Access</p>
-              <i class="fa-solid fa-check"></i>
-            </li>
-            <li>
-              <p>Business Orientation</p>
-              <i class="fa-solid fa-check"></i>
-            </li>
-            <li>
-              <p>Dedicated Consultant</p>
-              <i class="fa-solid fa-check"></i>
-            </li>
-            <li>
-              <p>Personal assistence</p>
-              <i class="fa-solid fa-check"></i>
-            </li>
-          </ul>
         </div>
       </div>
     </div>
@@ -143,13 +95,16 @@ export default {
       align-items: center;
       .box {
         width: calc(100% / 3);
-        padding: 25px;
         text-align: center;
         background-color: #fff;
         border-radius: 10px;
+        padding-top: 10px;
         i {
           color: #1b7e7e;
           font-size: 30px;
+          margin-bottom: 20px;
+        }
+        h3 {
           margin-bottom: 20px;
         }
         h2 {
@@ -159,6 +114,8 @@ export default {
         }
         ul {
           list-style: none;
+          padding: 25px;
+
           li {
             display: flex;
             justify-content: center;
@@ -175,10 +132,22 @@ export default {
           }
         }
       }
-      .box.center {
+      .box.big {
         height: 450px;
         margin: 0px 25px;
       }
+    }
+  }
+
+  .popular {
+    width: 20%;
+    background-color: #1b7e7e;
+    margin-top: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    h6 {
+      color: #ffff;
+      padding: 5px;
     }
   }
 }

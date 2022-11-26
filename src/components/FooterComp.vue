@@ -29,7 +29,7 @@ export default {
         <h2>{{ item.title }}</h2>
         <ul>
           <li v-for="(li, index) in item.inside" :key="index">
-            <a href="#">
+            <a href="">
               <i class="fa-solid fa-chevron-right no-hover"></i>
               <p>{{ li }}</p>
             </a>

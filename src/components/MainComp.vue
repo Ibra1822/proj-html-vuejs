@@ -31,8 +31,8 @@ export default {
   <QualityComp :quality="store.QualityArray" />
   <NetworkComp :networkArray="store.networkArray" />
   <BusinessComp :businessArray="store.businessArray" />
-  <PriceAreaComp />
-  <NewsComp />
+  <PriceAreaComp :price-array="store.priceArray" />
+  <NewsComp :newsArray="store.newsArray" />
   <FollowComp />
   <MessageComp :info="store.aboutus" />
 </template>
