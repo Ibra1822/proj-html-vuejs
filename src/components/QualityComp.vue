@@ -37,7 +37,7 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 780px) {
   .center {
     width: 100% !important;
     .card {
@@ -61,12 +61,9 @@ export default {
 .cont-qual {
   width: 100%;
   background-color: #e3e7df;
-  padding: 40px;
+  padding: 40px 0px;
   .center {
-    width: 75%;
-    height: 100%;
-    margin: auto;
-
+    @include center;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -59,7 +59,7 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 780px) {
   .center {
     width: 95% !important;
   }
@@ -119,13 +119,14 @@ export default {
     .cont-card-price {
       display: flex;
       align-items: center;
+      justify-content: center;
       .box {
         width: calc(100% / 3);
         text-align: center;
         background-color: #fff;
         border-radius: 10px;
         padding-top: 10px;
-        min-width: 210px;
+        min-width: 230px;
         i {
           color: #1b7e7e;
           font-size: 30px;

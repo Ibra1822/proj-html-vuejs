@@ -26,7 +26,7 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 780px) {
   .center {
     flex-direction: column;
     .cont-title {
@@ -49,9 +49,7 @@ export default {
   background-size: cover;
   background-position: right 12% bottom 56%;
   .center {
-    width: 60%;
-    height: 100%;
-    margin: auto;
+    @include center;
     display: flex;
     .cont-title {
       height: 100%;

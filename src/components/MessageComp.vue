@@ -55,7 +55,7 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 780px) {
   .center {
     flex-direction: column;
     width: 100% !important;

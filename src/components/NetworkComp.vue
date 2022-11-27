@@ -44,7 +44,7 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 780px) {
   .center {
     width: 95% !important;
     .left {
@@ -71,11 +71,11 @@ export default {
   justify-content: flex-end;
   .center {
     height: 100%;
-    width: 85%;
+    width: 92%;
     @include lowFlex;
     .left {
       height: 100%;
-      width: 38%;
+      width: 40%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -128,7 +128,7 @@ export default {
     //
     .right {
       height: 100%;
-      width: 70%;
+      width: 60%;
       img {
         height: 100%;
         width: 100%;

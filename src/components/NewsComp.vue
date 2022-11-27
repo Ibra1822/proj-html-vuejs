@@ -58,7 +58,7 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 780px) {
   .center {
     width: 100% !important;
   }
@@ -69,7 +69,7 @@ export default {
     flex-wrap: wrap;
     .box {
       width: calc(100% / 2);
-      min-width: 230px;
+      min-width: 255px;
       margin: 20px auto;
     }
   }
@@ -95,7 +95,7 @@ export default {
     .cont-title {
       width: 100%;
       height: 200px;
-      padding: 25px;
+      padding: 25px 20px;
       h4 {
         color: #1d8483;
         text-transform: uppercase;
