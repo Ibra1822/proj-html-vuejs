@@ -7,6 +7,11 @@ export default {
     info: Array,
     we: Array,
   },
+  data() {
+    return {
+      store,
+    };
+  },
 };
 </script>
 <template>
@@ -55,17 +60,41 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
 
+@media screen and (max-width: 880px) {
+  .center {
+    width: 100% !important;
+    padding: 20px !important;
+    .box {
+      width: calc(100% / 2 - 20px);
+      margin-bottom: 50px;
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .box {
+    margin: auto;
+    width: 100% !important;
+  }
+}
+// ------
+
 footer {
-  height: 500px;
   width: 100%;
   background-color: #121117;
   .center {
     @include center;
     @include mediumFlex;
+    flex-wrap: wrap;
+    padding: 10px 0px;
   }
   .box {
     height: 400px;
     width: calc(100% / 4 - 40px);
+    min-width: 193px;
     padding: 20px;
     background-color: rgba(30, 34, 35, 0.5);
     border-radius: 20px;
@@ -133,7 +162,6 @@ footer {
   }
 }
 .find-us {
-  height: 60px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -141,6 +169,7 @@ footer {
   background-color: #0d0d11;
   color: #a2adae;
   font-size: 0.9rem;
+  padding: 20px;
   .left-end {
     width: 50%;
     text-align: right;

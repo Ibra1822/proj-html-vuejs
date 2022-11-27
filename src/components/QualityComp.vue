@@ -37,18 +37,46 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
 
+@media screen and (max-width: 880px) {
+  .center {
+    width: 100% !important;
+    .card {
+      width: calc(100% / 2);
+      min-width: 220px;
+      text-align: center;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .center {
+    width: 100% !important;
+    .card {
+      width: 90% !important;
+    }
+  }
+}
+
+// ------
+
 .cont-qual {
   width: 100%;
   background-color: #e3e7df;
+  padding: 40px;
   .center {
-    @include center;
-    @include mediumFlex;
+    width: 75%;
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
   }
   .card {
     height: 290px;
     width: calc(100% / 3);
     padding: 15px;
-    margin: 40px 0px;
     .cont-inside {
       height: 100%;
       width: 100%;

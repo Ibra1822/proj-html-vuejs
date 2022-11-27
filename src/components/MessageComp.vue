@@ -35,16 +35,18 @@ export default {
         </div>
       </div>
       <div class="right">
-        <h3>Example Inc.</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <ul>
-          <li v-for="(item, index) in info" :key="index">
-            <i :class="item.icon"></i>
-            <p>{{ item.info }}</p>
-          </li>
-        </ul>
-        <button>View Map</button>
+        <div class="cont-right">
+          <h3>Example Inc.</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <ul>
+            <li v-for="(item, index) in info" :key="index">
+              <i :class="item.icon"></i>
+              <p>{{ item.info }}</p>
+            </li>
+          </ul>
+          <button>View Map</button>
+        </div>
       </div>
     </div>
   </div>
@@ -53,8 +55,26 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
 
+@media screen and (max-width: 880px) {
+  .center {
+    flex-direction: column;
+    width: 100% !important;
+  }
+
+  .left {
+    width: 100% !important;
+  }
+
+  .right {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// ------
+
 .cont-all {
-  height: 500px;
   width: 100%;
   .center {
     @include center;

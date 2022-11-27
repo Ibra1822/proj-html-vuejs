@@ -41,8 +41,28 @@ export default {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "../styles/mixin" as *;
+
+@media screen and (max-width: 880px) {
+  .center {
+    width: 95% !important;
+    .left {
+      width: 100% !important;
+      text-align: center;
+      .box {
+        padding: 10px;
+      }
+    }
+    .right {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+}
+
+// ------
 
 .cont-network {
   width: 100%;
@@ -55,20 +75,24 @@ export default {
     @include lowFlex;
     .left {
       height: 100%;
-      width: 30%;
+      width: 38%;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      font-size: 0.9rem;
       .box-cont {
         display: flex;
         flex-wrap: wrap;
         .box {
-          width: calc(100% / 2);
+          width: calc(100% / 2 - 20px);
           padding: 10px;
           margin-bottom: 45px;
           .box-title {
             display: flex;
             padding: 10px;
+            h2 {
+              font-size: 1rem;
+            }
             i {
               font-size: 20px;
               margin: 0px 5px 0px 0px;

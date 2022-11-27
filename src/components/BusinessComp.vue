@@ -47,8 +47,28 @@ export default {
 
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
+
+@media screen and (max-width: 880px) {
+  .title {
+    text-align: center;
+  }
+  .center {
+    width: 95% !important;
+  }
+  .box {
+    width: calc(100% / 2) !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .title {
+    margin-bottom: 55px;
+  }
+  .box {
+    width: 100% !important;
+  }
+}
+// ------
 .business-cont {
-  height: 850px;
   width: 100%;
   background-color: #121117;
   .center {
@@ -91,6 +111,7 @@ export default {
     .box-cont {
       @include lowFlex;
       flex-wrap: wrap;
+      padding: 30px;
       .box {
         width: calc(100% / 3);
         padding: 10px;

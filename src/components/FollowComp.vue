@@ -25,6 +25,23 @@ export default {
 
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
+
+@media screen and (max-width: 880px) {
+  .center {
+    flex-direction: column;
+    .cont-title {
+      width: 100% !important;
+    }
+    .cont-form {
+      width: 100% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+}
+// ------
+
 .cont-all {
   height: 400px;
   width: 100%;

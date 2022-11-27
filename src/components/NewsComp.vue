@@ -58,8 +58,35 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
 
+@media screen and (max-width: 880px) {
+  .center {
+    width: 100% !important;
+  }
+  .cont-title {
+    text-align: center;
+  }
+  .cont-box {
+    flex-wrap: wrap;
+    .box {
+      width: calc(100% / 2);
+      min-width: 230px;
+      margin: 20px auto;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cont-box {
+    padding: 40px !important;
+    .box {
+      width: 100% !important;
+      margin: 20px auto;
+    }
+  }
+}
+// ------
+
 .cont-news {
-  height: 600px;
   width: 100%;
   .center {
     @include center;
@@ -97,11 +124,11 @@ export default {
       }
     }
     .cont-box {
-      height: 400px;
       width: 100%;
       display: flex;
       justify-content: space-between;
       padding: 20px;
+
       .box {
         height: 350px;
         width: calc(100% / 3 - 30px);

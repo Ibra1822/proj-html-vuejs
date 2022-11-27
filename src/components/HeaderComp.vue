@@ -50,7 +50,7 @@ export default {
           </div>
         </header>
         <div class="hero-text">
-          <h1>Lead - <span>Customer</span></h1>
+          <h1>Lead ~ <span>Customer</span></h1>
           <div class="cont-p">
             <p>
               Sucsessful strategis require data analysis,creativity and customer
@@ -70,6 +70,85 @@ export default {
 
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
+
+@media screen and (max-width: 880px) {
+  .info {
+    margin: auto;
+    .cont-hours {
+      display: none;
+    }
+    .cont-info {
+      margin: auto;
+    }
+  }
+
+  .hero-cont {
+    @include mediaCenter;
+  }
+
+  header {
+    padding-top: 20px;
+  }
+  .content-header {
+    @include mediaCenter;
+    flex-direction: column;
+    .logo {
+      margin-bottom: 20px;
+    }
+    nav {
+      flex-direction: column;
+      ul {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .hero-text {
+    h1[data-v-08024ef0] {
+      font-size: 2.5rem;
+    }
+    .cont-p[data-v-08024ef0] {
+      margin-bottom: 20px;
+    }
+    .cont-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .btn-left {
+        margin: 20px auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cont-header {
+    .head[data-v-08024ef0] {
+      height: 60px;
+      .fa-brands {
+        display: none;
+      }
+    }
+  }
+
+  .content-header {
+    .logo {
+      margin-bottom: 25px;
+    }
+  }
+
+  nav {
+    flex-direction: column;
+    ul {
+      li {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+// ------
+
 .cont-header {
   height: 800px;
   width: 100%;
@@ -122,6 +201,7 @@ header {
     .logo {
       color: #fff;
       text-transform: uppercase;
+      font-size: 0.8rem;
       cursor: pointer;
       span {
         padding: 5px 0px 5px 8px;
@@ -129,7 +209,7 @@ header {
         color: #39c4c6;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-weight: 200;
       }
       h2 {
@@ -142,9 +222,9 @@ header {
       ul {
         list-style: none;
         display: flex;
-        font-size: 1.1rem;
+        font-size: 1rem;
         li {
-          margin-right: 25px;
+          margin-right: 20px;
           text-transform: uppercase;
           a {
             text-decoration: none;

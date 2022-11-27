@@ -59,10 +59,36 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/mixin" as *;
 
+@media screen and (max-width: 880px) {
+  .center {
+    width: 95% !important;
+  }
+  .cont-card-price {
+    flex-wrap: wrap;
+    justify-content: center;
+    .box {
+      width: calc(100% / 2);
+      margin-top: 45px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h4,
+  h2 {
+    margin-bottom: 30px !important;
+  }
+  .box {
+    width: 90% !important;
+    margin-bottom: 45px;
+  }
+}
+// ------
+
 .cont-prices {
-  height: 850px;
   width: 100%;
   background-color: #e3e7df;
+  padding: 40px;
   .center {
     @include center;
     display: flex;
@@ -99,6 +125,7 @@ export default {
         background-color: #fff;
         border-radius: 10px;
         padding-top: 10px;
+        min-width: 210px;
         i {
           color: #1b7e7e;
           font-size: 30px;
