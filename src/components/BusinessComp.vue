@@ -37,7 +37,8 @@ export default {
             <i :class="item.icon"></i>
             <h2>{{ item.title }}</h2>
             <p>{{ item.desc }}</p>
-            <button>Read more</button>
+            <p v-if="item.isMore">{{ item.more }}</p>
+            <button @click="item.isMore = !item.isMore">Read more</button>
           </div>
         </div>
       </div>
@@ -115,6 +116,8 @@ export default {
       .box {
         width: calc(100% / 3);
         padding: 10px;
+        transition: all 1s;
+
         .inbox {
           height: 100%;
           width: 100%;

@@ -27,7 +27,7 @@ export default {
               <p>{{ item.info }}</p>
             </li>
           </ul>
-          <button>Get in touch</button>
+          <button><a href="#sign">Get in touch</a></button>
         </div>
       </div>
       <div v-for="(item, index) in we" :key="index" class="box">
@@ -158,6 +158,10 @@ footer {
     }
     button {
       @include darkBtn;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
     }
   }
 }

@@ -41,8 +41,14 @@ export default {
             </div>
             <nav>
               <ul>
-                <li v-for="(item, index) in nav" :key="index">
-                  <a href="#">{{ item.title }}</a>
+                <li
+                  :class="{ active: item.active }"
+                  v-for="(item, index) in nav"
+                  :key="index"
+                >
+                  <a @click="item.active = !item.active" href="#">{{
+                    item.title
+                  }}</a>
                 </li>
               </ul>
               <button><a href="#sign"> Get in touch</a></button>
@@ -181,6 +187,11 @@ export default {
     }
   }
 }
+
+.active {
+  background-color: rgba(29, 132, 131, 0.7);
+}
+
 .hero-cont {
   height: calc(800px - 55px);
   width: 100%;
@@ -226,6 +237,7 @@ header {
         li {
           margin-right: 20px;
           text-transform: uppercase;
+          padding: 7px 10px;
           a {
             text-decoration: none;
             color: #fff;

@@ -8,7 +8,7 @@ export const store = reactive({
     },
     {
       title: "About",
-      active: true,
+      active: false,
     },
     {
       title: "Services",
@@ -70,31 +70,43 @@ export const store = reactive({
       icon: "fa-solid fa-network-wired",
       title: "Audit & Assurance",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      more: "Lorem ipsum dolor sit amet consectetur, adipisicing elit ",
+      isMore: false,
     },
     {
       icon: "fa-solid fa-suitcase",
       title: "Financial Advisory",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      more: "Lorem ipsum dolor sit amet consectetur, adipisicing elit ",
+      isMore: false,
     },
     {
       icon: "fa-solid fa-chart-simple",
       title: "Analytics and M&A",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      more: "Lorem ipsum dolor sit amet consectetur, adipisicing elit ",
+      isMore: false,
     },
     {
       icon: "fa-solid fa-plane-up",
       title: "Middle Marketing",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      more: "Lorem ipsum dolor sit amet consectetur, adipisicing elit ",
+      isMore: false,
     },
     {
       icon: "fa-solid fa-earth-europe",
       title: "Legal Consulting",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      more: "Lorem ipsum dolor sit amet consectetur, adipisicing elit ",
+      isMore: false,
     },
     {
       icon: "fa-solid fa-inbox",
       title: "Regulatory Risk",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      more: "Lorem ipsum dolor sit amet consectetur, adipisicing elit ",
+      isMore: false,
     },
   ],
 
