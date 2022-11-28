@@ -81,6 +81,20 @@ export default {
     margin: auto;
     width: 100% !important;
   }
+
+  .find-us {
+    .left-end {
+      display: none;
+    }
+    .right-end {
+      width: 100% !important;
+      display: flex;
+      align-items: center;
+      .cont-year {
+        width: 100%;
+      }
+    }
+  }
 }
 // ------
 
