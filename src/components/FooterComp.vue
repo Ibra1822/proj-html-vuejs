@@ -36,7 +36,9 @@ export default {
           <li v-for="(li, index) in item.inside" :key="index">
             <a href="">
               <i class="fa-solid fa-chevron-right no-hover"></i>
-              <p>{{ li }}</p>
+              <p>
+                <span>{{ li }}</span>
+              </p>
             </a>
           </li>
         </ul>
@@ -104,17 +106,20 @@ footer {
     }
     ul {
       list-style: none;
-      a {
-        text-decoration: none;
-        color: #fff;
-        display: flex;
-        margin-bottom: 20px;
-        &:hover {
-          text-decoration: underline;
-        }
-
-        i {
-          margin-right: 15px;
+      li {
+        a {
+          text-decoration: none;
+          color: #fff;
+          display: flex;
+          margin-bottom: 20px;
+          span {
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          i {
+            margin-right: 15px;
+          }
         }
       }
     }

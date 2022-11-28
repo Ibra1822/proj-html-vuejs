@@ -31,11 +31,22 @@ export default {
             Evry week we pubblish content about what is the best in the business
             world
           </p>
-          <button>See ALL</button>
+          <button
+            v-for="(item, index) in newsArray"
+            :key="index"
+            @click="item.visible = !item.visible"
+          >
+            See ALL
+          </button>
         </div>
       </div>
       <div class="cont-box">
-        <div v-for="(item, index) in newsArray" :key="index" class="box">
+        <div
+          v-for="(item, index) in newsArray"
+          :key="index"
+          v-show="item.visible === true"
+          class="box"
+        >
           <div class="img-cont">
             <img class="eff" :src="getImg(item.image)" alt="" />
           </div>
@@ -115,6 +126,9 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        button:not(:last-child) {
+          display: none;
+        }
         p {
           color: #778a94;
         }
@@ -126,15 +140,15 @@ export default {
     .cont-box {
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       padding: 20px;
-
+      flex-wrap: wrap;
       .box {
         height: 350px;
         width: calc(100% / 3 - 30px);
         position: relative;
-        overflow: hidden;
         cursor: pointer;
+        margin-bottom: 30px;
         &:hover .text p {
           display: block;
         }

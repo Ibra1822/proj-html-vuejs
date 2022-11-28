@@ -231,6 +231,7 @@ export const store = reactive({
       desc: "Lorem ipsum dolor sit amet.",
       user: "Laura Johnson",
       last: "2 Days ago",
+      visible: true,
     },
     {
       image: "news-2.jpg",
@@ -238,6 +239,7 @@ export const store = reactive({
       desc: "Lorem ipsum dolor sit amet.",
       user: "Anderea Miller",
       last: "1 Days ago",
+      visible: true,
     },
     {
       image: "news-3.jpg",
@@ -245,6 +247,23 @@ export const store = reactive({
       desc: "Lorem ipsum dolor sit amet.",
       user: "Elisa Simpson",
       last: "4 Days ago",
+      visible: true,
+    },
+    {
+      image: "news-4.jpg",
+      title: "Start to work",
+      desc: "Lorem ipsum dolor sit amet.",
+      user: "Elisa Simpson",
+      last: "4 Days ago",
+      visible: false,
+    },
+    {
+      image: "news-5.jpg",
+      title: "I found a Inspiration",
+      desc: "Lorem ipsum dolor sit amet.",
+      user: "Elisa Simpson",
+      last: "4 Days ago",
+      visible: false,
     },
   ],
 

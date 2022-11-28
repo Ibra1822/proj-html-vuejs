@@ -30,7 +30,7 @@ export default {
   computed: {
     error() {
       if (store.mail === "") {
-        return "La Mail e il  è OBBLIGATORIA ";
+        return "La Mail è OBBLIGATORIA ";
       } else if (store.info === "") {
         return "Devi Selezionare su cosa vuoi piu INFO";
       }
@@ -201,9 +201,13 @@ export default {
     }
     ul {
       list-style: none;
+
       li {
         display: flex;
         align-items: center;
+        &:last-child i {
+          padding: 20px 23px;
+        }
         i {
           padding: 20px;
           font-size: 22px;
