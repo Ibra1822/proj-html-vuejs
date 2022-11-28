@@ -45,7 +45,7 @@ export default {
                   <a href="#">{{ item.title }}</a>
                 </li>
               </ul>
-              <button>Get in touch</button>
+              <button><a href="#sign"> Get in touch</a></button>
             </nav>
           </div>
         </header>
@@ -58,7 +58,7 @@ export default {
               excellent services
             </p>
             <div class="cont-btn">
-              <button class="btn-left">Get in Touch</button>
+              <button class="btn-left"><a href="#sign">Get in Touch</a></button>
               <button class="btn-rigth">Read More</button>
             </div>
           </div>
@@ -234,6 +234,10 @@ header {
       }
       button {
         @include stBtn;
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -265,6 +269,10 @@ header {
   .btn-left {
     @include stBtn;
     margin-right: 15px;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
   }
   .btn-rigth {
     @include sdBtn;

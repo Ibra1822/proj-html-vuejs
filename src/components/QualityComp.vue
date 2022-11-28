@@ -30,6 +30,10 @@ export default {
           </div>
         </div>
       </div>
+
+      <div class="cont-d">
+        <div v-for="n in 36" :key="n" class="dot"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -62,6 +66,7 @@ export default {
   width: 100%;
   background-color: #e3e7df;
   padding: 40px 0px;
+
   .center {
     @include center;
     display: flex;
@@ -69,6 +74,7 @@ export default {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    position: relative;
   }
   .card {
     height: 290px;
@@ -99,5 +105,25 @@ export default {
       padding: 5px;
     }
   }
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #39c4c6;
+  border-radius: 50%;
+  margin: 5px;
+  opacity: 0.4;
+}
+.cont-d {
+  display: flex;
+  flex-wrap: wrap;
+  height: 10px;
+  width: 180px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 100%;
+  left: 49%;
+  z-index: 999;
 }
 </style>

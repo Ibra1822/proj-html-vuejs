@@ -37,6 +37,10 @@ export default {
       <div class="right">
         <img src="../assets/lead-customer/images/about-3.jpg" alt="" />
       </div>
+
+      <div class="cont-d">
+        <div v-for="n in 36" :key="n" class="dot"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -73,6 +77,7 @@ export default {
     height: 100%;
     width: 92%;
     @include lowFlex;
+    position: relative;
     .left {
       height: 100%;
       width: 40%;
@@ -136,5 +141,24 @@ export default {
       }
     }
   }
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #39c4c6;
+  border-radius: 50%;
+  margin: 5px;
+  opacity: 0.4;
+}
+.cont-d {
+  display: flex;
+  flex-wrap: wrap;
+  height: 10px;
+  width: 180px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 95%;
+  left: 45%;
 }
 </style>

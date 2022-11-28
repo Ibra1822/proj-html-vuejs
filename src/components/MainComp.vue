@@ -6,7 +6,6 @@ import PriceAreaComp from "./PriceAreaComp.vue";
 import NewsComp from "./NewsComp.vue";
 import FollowComp from "./FollowComp.vue";
 import MessageComp from "./MessageComp.vue";
-
 import { store } from "../data/store";
 
 export default {

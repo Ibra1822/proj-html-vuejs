@@ -7,7 +7,7 @@ export default {
 };
 </script>
 <template>
-  <div class="cont-all">
+  <div id="sign" class="cont-all">
     <div class="center">
       <div class="left">
         <div class="text-cont">
