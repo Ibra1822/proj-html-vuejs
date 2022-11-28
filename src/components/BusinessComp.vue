@@ -116,8 +116,6 @@ export default {
       .box {
         width: calc(100% / 3);
         padding: 10px;
-        transition: all 1s;
-
         .inbox {
           height: 100%;
           width: 100%;

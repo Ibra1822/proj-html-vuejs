@@ -189,7 +189,7 @@ export default {
 }
 
 .active {
-  background-color: rgba(29, 132, 131, 0.7);
+  border-bottom: 2px solid rgba(29, 132, 131, 0.7) !important;
 }
 
 .hero-cont {
@@ -237,7 +237,7 @@ header {
         li {
           margin-right: 20px;
           text-transform: uppercase;
-          padding: 7px 10px;
+          border: 2px solid transparent;
           a {
             text-decoration: none;
             color: #fff;

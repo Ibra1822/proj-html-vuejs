@@ -1,6 +1,33 @@
 import { reactive } from "vue";
 
 export const store = reactive({
+  companyInfoName: "",
+  companyInfoEmail: "",
+  isCorrectSend: false,
+  companyInfo: [
+    {
+      name: "Lucia",
+      mail: "heyo@example.com",
+    },
+  ],
+
+  isClicked: false,
+  name: "",
+  mail: "",
+  phone: "",
+  message: "",
+  info: "",
+
+  usersMessage: [
+    {
+      name: "Mario",
+      mail: "hello@example.com",
+      phone: "5+(333)3432342",
+      message: "Hello I will more Info",
+      info: "Prices",
+    },
+  ],
+
   nav: [
     {
       title: "Home",

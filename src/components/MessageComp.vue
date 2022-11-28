@@ -1,8 +1,40 @@
 <script>
+import { store } from "../data/store";
+
 export default {
   name: "MessageComp",
   props: {
     info: Array,
+  },
+  data() {
+    return {
+      store,
+    };
+  },
+  methods: {
+    send() {
+      if (store.mail !== "" && store.info !== "") {
+        store.usersMessage.push({
+          name: store.name,
+          mail: store.mail,
+          phone: store.phone,
+          message: store.message,
+          info: store.info,
+        });
+      } else {
+        store.isClicked = true;
+      }
+      console.log(store.usersMessage);
+    },
+  },
+  computed: {
+    error() {
+      if (store.mail === "") {
+        return "La Mail e il  è OBBLIGATORIA ";
+      } else if (store.info === "") {
+        return "Devi Selezionare su cosa vuoi piu INFO";
+      }
+    },
   },
 };
 </script>
@@ -17,21 +49,28 @@ export default {
         </div>
         <div class="form">
           <div class="name-email">
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="Name" v-model="store.name" />
+            <input type="email" placeholder="Email" v-model="store.mail" />
           </div>
           <div class="phone-info">
-            <input type="number" placeholder="Phone" />
-            <select name="" id="">
+            <input type="number" placeholder="Phone" v-model="store.phone" />
+            <select v-model="store.info" name="" id="">
               <option value="" selected>More info</option>
-              <option value="">1</option>
-              <option value="">2</option>
+              <option value="Prices">Prices</option>
+              <option value="Services">Services</option>
             </select>
           </div>
           <div class="message">
-            <textarea placeholder="Message" name="" id="" rows="5"></textarea>
+            <textarea
+              v-model="store.message"
+              placeholder="Message"
+              name=""
+              id=""
+              rows="5"
+            ></textarea>
           </div>
-          <button>Send</button>
+          <button @click="send()">Send</button>
+          <h4 v-if="store.isClicked">{{ error }}</h4>
         </div>
       </div>
       <div class="right">
@@ -183,6 +222,10 @@ export default {
     button {
       @include sdBtn;
       color: #1d8483;
+      &:hover {
+        background-color: #1d8483;
+        color: #fff;
+      }
     }
   }
 }

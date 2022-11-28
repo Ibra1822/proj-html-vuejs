@@ -1,6 +1,34 @@
 <script>
+import { computed } from "@vue/runtime-core";
+import { store } from "../data/store";
+
 export default {
   name: "FollowComp",
+  data() {
+    return {
+      store,
+    };
+  },
+  methods: {
+    sendCompanyInfo() {
+      if (store.companyInfoEmail !== "" && store.companyInfoName !== "") {
+        store.companyInfo.push({
+          name: store.companyInfoName,
+          mail: store.companyInfoEmail,
+        });
+      } else {
+        store.isCorrectSend = true;
+      }
+      console.log(store.companyInfo);
+    },
+  },
+  computed: {
+    errorNewsLetter() {
+      if (store.companyInfoEmail == "" || store.companyInfoName == "") {
+        return "IL NOME E LA MAIL SONO OBBLIGATORI";
+      }
+    },
+  },
 };
 </script>
 <template>
@@ -15,9 +43,14 @@ export default {
         </p>
       </div>
       <div class="cont-form">
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <button>Subscribe</button>
+        <h4 v-if="store.isCorrectSend">{{ errorNewsLetter }}</h4>
+        <input type="text" placeholder="Name" v-model="store.companyInfoName" />
+        <input
+          type="email"
+          placeholder="Email"
+          v-model="store.companyInfoEmail"
+        />
+        <button @click="sendCompanyInfo()">Subscribe</button>
       </div>
     </div>
   </div>
@@ -83,6 +116,10 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      h4 {
+        color: #1d8483;
+        margin-bottom: 10px;
+      }
       input {
         padding: 12px 15px;
         opacity: 0.5;

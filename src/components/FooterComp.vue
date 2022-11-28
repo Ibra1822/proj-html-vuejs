@@ -112,9 +112,7 @@ footer {
         &:hover {
           text-decoration: underline;
         }
-        &:hover .no-hover {
-          text-decoration: none;
-        }
+
         i {
           margin-right: 15px;
         }

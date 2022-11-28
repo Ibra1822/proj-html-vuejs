@@ -54,6 +54,7 @@ export default {
     .left {
       width: 100% !important;
       text-align: center;
+
       .box {
         padding: 10px;
       }
